@@ -15,27 +15,18 @@
 .board
 {
     background: #f4d58d;
-    width: 720px;
+    width: 50vw;
     max-width: 80%;
-    height: 900px;
+    height: 90vh;
     margin: auto;
     padding: 1.5em;
     border: solid 3px white;
     display: flex;
     flex-direction: column;
 }
-h1
-{
-    margin: 0.5em auto;
-}
-.shadow5
-{
-    box-shadow: 0px 0px 5px black;
-}
-.radius
-{
-    border-radius: 5px;
-}
+h1 { margin: 0.5em auto; }
+.shadow5 { box-shadow: 0px 0px 5px black; }
+.radius { border-radius: 5px; }
 .bord-ridge-radius
 {
     border: 3px ridge white;
@@ -54,14 +45,11 @@ h1
     justify-content: space-around;
     align-items: center;
 }
-.center
-{
-    text-align: center;
-}
+.center { text-align: center; }
 /***********HEADER***********/
 .header
 {
-    height: 8em;
+    height: 4em;
     margin-bottom: 1.5em;
 }
 .header, .flag
@@ -69,37 +57,19 @@ h1
     display: flex;
     flex-direction: row;
 }
-.annee, .argent
-{
-    width: 18%;
-}
-.titre
-{
-    width: 64%;
-}
+.annee, .argent { width: 18%; }
+.titre { width: 64%; }
 /********DRAPEAU*********/
 .flag
 {
     border:  3px ridge white ;
     width: 30%;
-    height: 30px;
+    height: 50px;
 }
-.blue, .red, .white
-{
-    width: 33.33%;
-}
-.blue
-{
-    background: #708d81;
-}
-.white
-{
-    background:#f4d58d;
-}
-.red
-{
-    background: #bf0603;
-}
+.blue, .red, .white { width: 33.33%; }
+.blue { background: #708d81; }
+.white { background:#f4d58d; }
+.red { background: #bf0603; }
 /*************INFORMATIONS**************/
 .informations
 {
@@ -113,7 +83,7 @@ h1
     width: 100%;
     height: 10em;
     background: #afafaf;
-    margin: auto;
+    margin: 0.5em auto;
     text-align: center;
     margin-bottom: 1.5em;
     overflow:hidden ;
@@ -134,6 +104,19 @@ h1
     height: 60vh;
     background: #708d81;
     overflow-y: auto ;
+}
+.menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.icone{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: 2px ridge white;
+
 }
 /************PATES**************/
 .section
@@ -163,13 +146,10 @@ h1
     position: absolute;
     right: 0;
 }
-.barre-production{
-    text-align: left;
-}
 .barre-production
 {
-    width: 50%;
-    height: 25px;
+    width: 100%;
+    height: 30%;
     border: 3px ridge white;
     margin: 0.5px auto;
 }
@@ -186,4 +166,12 @@ h1
     width: 100px;
     background: #8D0801;
     color: white;
+}
+/***********MEDIA QUERRIES************/
+@media screen and (max-width: 720px) {
+    .board{ width: 90vw; }
+    h1{ font-size: 1.5rem; }
+    h2{ font-size: 1.2rem; }
+    h3{ font-size: 1rem; }
+    .barre-production { height: 20%;}
 }
