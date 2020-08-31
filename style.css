@@ -1,0 +1,189 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fredericka the Great', cursive;
+}
+.main
+{
+    background: #001427;
+    width: 100%;
+    padding: 2em 0;
+    height: 100vh;
+}
+.board
+{
+    background: #f4d58d;
+    width: 720px;
+    max-width: 80%;
+    height: 900px;
+    margin: auto;
+    padding: 1.5em;
+    border: solid 3px white;
+    display: flex;
+    flex-direction: column;
+}
+h1
+{
+    margin: 0.5em auto;
+}
+.shadow5
+{
+    box-shadow: 0px 0px 5px black;
+}
+.radius
+{
+    border-radius: 5px;
+}
+.bord-ridge-radius
+{
+    border: 3px ridge white;
+    border-radius: 5px;
+}
+.flewrow
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.flexcol
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.center
+{
+    text-align: center;
+}
+/***********HEADER***********/
+.header
+{
+    height: 8em;
+    margin-bottom: 1.5em;
+}
+.header, .flag
+{
+    display: flex;
+    flex-direction: row;
+}
+.annee, .argent
+{
+    width: 18%;
+}
+.titre
+{
+    width: 64%;
+}
+/********DRAPEAU*********/
+.flag
+{
+    border:  3px ridge white ;
+    width: 30%;
+    height: 30px;
+}
+.blue, .red, .white
+{
+    width: 33.33%;
+}
+.blue
+{
+    background: #708d81;
+}
+.white
+{
+    background:#f4d58d;
+}
+.red
+{
+    background: #bf0603;
+}
+/*************INFORMATIONS**************/
+.informations
+{
+    width: 100%;
+    height: 3em;
+    background: silver;
+}
+/************SCREEN*************/
+.screen
+{
+    width: 100%;
+    height: 10em;
+    background: #afafaf;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 1.5em;
+    overflow:hidden ;
+    position: relative;
+}
+.gif
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    width: 10em;
+}
+
+/************CONTENT**************/
+.content
+{
+    height: 60vh;
+    background: #708d81;
+    overflow-y: auto ;
+}
+/************PATES**************/
+.section
+{
+    width: 90%;
+    height: 7em;
+    border: 5px ridge white;
+    border-radius: 5px;
+    margin: 1em auto 0 auto;
+    background: #f4d58d;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.infos-production
+{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.section button{
+    position: absolute;
+    right: 0;
+}
+.barre-production{
+    text-align: left;
+}
+.barre-production
+{
+    width: 50%;
+    height: 25px;
+    border: 3px ridge white;
+    margin: 0.5px auto;
+}
+.section img
+{
+    position: absolute;
+    left: 0;
+    width: 100px;
+}
+.action
+{
+    position: absolute;
+    right: 0;
+    width: 100px;
+    background: #8D0801;
+    color: white;
+}

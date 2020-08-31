@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coquillette & Co.</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Righteous&display=swap" rel="stylesheet">
+</head>
+
+
+
+<body>
+    <!--PRINCIPAL-->
+    <div class="main">
+
+        <!--TABLEAU CENTRAL-->
+        <div class="board bord-ridge-radius">
+
+            <!--HEADER-->
+            <div class="header flexrow">
+
+                <!--ANNEE-->
+                <div class="annee shadow5 bord-ridge-radius center"><p>ANNEE</p></div>
+
+                <!--TITRE DU JEU-->
+                <div class="titre flexcol">
+                    <!--DRAPEAU-->
+                    <div class="flag shadow5 flexrow">
+                        <div class="blue"></div>
+                        <div class="white"></div>
+                        <div class="red"></div>
+                    </div>
+                    <!--TITRE PRINCIPAL-->
+                    <h1>Coquillette & Co.</h1>
+                </div>
+
+                <!--ARGENT-->
+                <div class="argent shadow5 bord-ridge-radius center"><p>ARGENT</p></div>
+
+            </div>
+
+            <!--ANIMATION SCREEN-->
+            <div class="screen shadow5 bord-ridge-radius">
+                <iframe src="https://giphy.com/embed/FSNXUr0ZOUjyU"class="gif"></iframe>
+                <!-- <iframe src="https://giphy.com/embed/fYkiCRjm2GQECQuIz4" class="gif"></iframe>
+                <iframe src="https://giphy.com/embed/KHFV8UJSzZzQk"></iframe> -->
+            </div>
+
+            <!--CONTENT-->
+            <div class="content shadow5 bord-ridge-radius">
+
+                <!--SECTION PATES-->
+                <div class="control pasta">
+
+                    <!--STOCK-->
+                    <div class="stock center">
+                        <h2>STOCK</h2>
+                        <div class="flexrow"></div>
+                        <span>farine : </span>
+                        <span>eau : </span>
+                        <span>oeufs : </span>
+                    </div>
+
+                    <!--PASTA-->
+                    <div class="tagliatelle section shadow5">
+                        <!--IMAGE-->
+                        <img src="assets/pates/tagliatelle.png" alt="">
+                        <!--INFORMATIONS-->
+                        <div class="infos-production">
+                            <h3>TAGLIATELLES</h2>
+                            <span>Quantité : </span>
+                            <!--BARRE DE PROGRESSION-->
+                            <div class="barre-production">
+                                <div class="avancement">0%</div>
+                            </div>
+                        </div>
+                        <!--BOUTON ACTION-->
+                        <button classonclick="produceTagliatelle()">PRODUIRE</button>
+
+                    </div>    
+                </div>
+                
+                <!--SECTION SHOP-->
+                <div class="control shop">
+
+                </div>     
+
+                <!--SECTION FACTORY-->
+                <div class="control factory">
+                    
+                </div>       
+
+                <!--SECTION FIELD-->
+                <div class="control field">
+                    
+                </div>    
+
+                <!--SECTION WORLD-->
+                <div class="control world">
+                    
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
