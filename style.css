@@ -70,6 +70,7 @@ h1 { margin: 0.5em auto; }
 .blue { background: #708d81; }
 .white { background:#f4d58d; }
 .red { background: #bf0603; }
+
 /*************INFORMATIONS**************/
 .informations
 {
@@ -117,6 +118,16 @@ h1 { margin: 0.5em auto; }
     border-radius: 50px;
     border: 2px ridge white;
 
+}
+.control
+{
+    margin-top: 1.5em;
+}
+
+.avancement
+{
+    width: 0;
+    background: #8D0801;
 }
 /************PATES**************/
 .section
