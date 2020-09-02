@@ -126,8 +126,20 @@ h1 { margin: 0.5em auto; }
 
 .avancement
 {
-    width: 0;
+    width: 0%;
     background: #8D0801;
+    color: white;
+}
+.production
+{
+    color: #8D0801;
+    font-weight: bold;margin-right: 10px;
+    padding: 5px;
+    transition: 0.5s;
+}
+.production:hover
+{
+    box-shadow: none;
 }
 /************PATES**************/
 .section
