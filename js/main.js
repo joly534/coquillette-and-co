@@ -1,6 +1,6 @@
 
 var valueTagliatelle = 0;
-var loadOnScreen = document.getElementById('screen');
+var loadOnScreen = document.getElementById('pasta');
 var producePasta = new Produce('pasta',valueTagliatelle,'gr');
 
 
@@ -29,7 +29,6 @@ function produceTagliatelle()
             } else if (valueTagliatelle >= 2000000) { poids = ' tonnes'; }  
             
         
-    producePasta.screen(); 
         }, 16);
     
 }
@@ -39,13 +38,14 @@ function Produce(name,value, unit){
     this.value = value,
     this.unit = unit,
     this.screen = function() {
-        loadOnScreen.innerHTML= name + ' : ' + value + unit ;
+        loadOnScreen.append(name + ' : ' + value + unit ); 
     }
 }
 
 
 
 function update() {
+    producePasta.screen(); 
 
 }
 
