@@ -1,5 +1,7 @@
 
 var valueTagliatelle = 0;
+var loadOnScreen = document.getElementById('screen');
+var producePasta = new Produce('pasta',valueTagliatelle,'gr');
 
 
 function produceTagliatelle()
@@ -24,11 +26,26 @@ function produceTagliatelle()
                 tagliatelle.innerHTML= "Quantité : " +  valueTagliatelle + poids;
             } else if ((valueTagliatelle >= 1000) && (valueTagliatelle < 1000000)) { poids = 'kg';
             } else if ((valueTagliatelle >= 1000000) && (valueTagliatelle < 2000000)) { poids = ' tonne';
-            } else if (valueTagliatelle >= 2000000) { poids = ' tonnes'; }      
+            } else if (valueTagliatelle >= 2000000) { poids = ' tonnes'; }  
+            
+        
+    producePasta.screen(); 
         }, 16);
+    
+}
+/************constructeur fonction affichage valeur sur ecran************/
+function Produce(name,value, unit){
+    this.name = name,
+    this.value = value,
+    this.unit = unit,
+    this.screen = function() {
+        loadOnScreen.innerHTML= name + ' : ' + value + unit ;
+    }
 }
 
-function update(){
+
+
+function update() {
 
 }
 
