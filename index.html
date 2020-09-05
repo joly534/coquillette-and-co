@@ -36,15 +36,14 @@
                 </div>
 
                 <!--ARGENT-->
-                <div class="argent shadow5 bord-ridge-radius center"><p>ARGENT</p></div>
+                <div class="argent shadow5 bord-ridge-radius center" id="argent"></div>
 
             </div>
 
             <!--ANIMATION SCREEN-->
             <div class="screen shadow5 bord-ridge-radius" id="screen">
-                <div id="pasta">
-                    <button onclick="vendrePates()">vendre</button>
-                </div>
+                <h2>PRODUCTION</h2>
+                <div id="pasta"></div>
             </div>
 
             <!--CONTENT-->
@@ -52,10 +51,11 @@
 
                 <!--MENU-->
                 <div class="menu">
-                    <div class="icone"></div>
-                    <div class="icone"></div>
-                    <div class="icone"></div>
-                    <div class="icone"></div>
+                    <div class="icone">Cuisine</div>
+                    <div class="icone">Magasin</div>
+                    <div class="icone">Usine</div>
+                    <div class="icone">Franchise</div>
+                    <div class="icone">Bourse</div>
                 </div>
 
                 <!--SECTION PATES-->
@@ -65,9 +65,9 @@
                     <div class="stock center">
                         <h2>STOCK</h2>
                         <div class="flexrow"></div>
-                        <span>farine : </span>
-                        <span>eau : </span>
-                        <span>oeufs : </span>
+                        <span id="farine"></span>
+                        <span id="oeuf"></span>
+                        <span id="eau"></span>
                     </div>
 
                     <!--PASTA-->
@@ -77,7 +77,6 @@
                         <!--INFORMATIONS-->
                         <div class="infos-production">
                             <h3>TAGLIATELLES</h2>
-                            <span id="taglia">Quantité : <br/></span>
                             <!--BARRE DE PROGRESSION-->
                             <div class="barre-production">
                                 <div id="avancement-tagliatelle" class="avancement">0%</div>
@@ -102,7 +101,12 @@
                 <!--SECTION FIELD-->
                 <div class="control field">
                     
-                </div>    
+                </div>
+                
+                <!--SECTION FRANCHISE-->
+                <div class="control franchise">
+                    
+                </div>
 
                 <!--SECTION WORLD-->
                 <div class="control world">
@@ -117,7 +121,7 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="js/date.js"></script>
-    <script src="js/main.js"></script>
     <script src="js/money.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
