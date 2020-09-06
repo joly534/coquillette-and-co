@@ -1,65 +1,58 @@
-
-var valueTagliatelle = 0;
 var pasta = 0;
-/******unite de mesure */
 var poids = 'kg';
-var valueFarine = 2000;  
-valueOeuf = 10000;
-valueEau = 10000;
 var loadOnScreen = document.getElementById('pasta');
 var divProducePasta = document.getElementById('pasta');
+var divFarine= document.getElementById('farine');
+var divOeuf = document.getElementById('oeuf');
+var divEau = document.getElementById('eau');
+var ingredient = ['farine', 'Oeuf', 'Eau'];
+var unite = ' unités'
 
 
 function produceTagliatelle()
 {
-    var state = false;
-    var pourcentageTagliatelle = 0;
-    /******div qui entoure la barre de progression******/
-    var divTagliatelle = document.getElementById('taglia');
-    /******div de la barre de  progression******/
     var avancement = document.getElementById('avancement-tagliatelle');
-        
-        setInterval(() => {
-            pourcentageTagliatelle += 1;
-            avancement.innerHTML = pourcentageTagliatelle + '%';
-            avancement.style.width = pourcentageTagliatelle + '%';
-            if (pourcentageTagliatelle == 100) {
-                pasta += 30;
-                valueFarine -= 20;
-                valueOeuf -= 200;
-                valueEau -= 10;
-                money -= 150;
-
-                pourcentageTagliatelle = 0;
-                loadPastaOnScreen();
-                loadStockOnScreen();
-                updateMoney();
-            } else if ((valueTagliatelle >= 1000) && (valueTagliatelle < 1000000)) { poids = 'kg';
-            } else if ((valueTagliatelle >= 1000000) && (valueTagliatelle < 2000000)) { poids = ' tonne';
-            } else if (valueTagliatelle >= 2000000) { poids = ' tonnes'; }  
-            
-        
-        }, 16);
-    
+    var divIngredientOne = document.getElementById('farine');
+    var valueIngredientOne = 100;
+    var ingredientOne = ingredient[0];
+    var divIngredientTwo = document.getElementById('oeuf');
+    var valueIngredientTwo = 500;
+    var ingredientTwo = ingredient[1];
+    var divIngredientThree = document.getElementById('eau');
+    var valueIngredientThree = 100;
+    var ingredientThree = ingredient[2];
+    prodTagliatelle= new Produce (0, avancement, 30, 600, 6, 1, 5, 
+                                    divIngredientOne, valueIngredientOne, ingredientOne,
+                                    divIngredientTwo,valueIngredientTwo,ingredientTwo,
+                                    divIngredientThree,valueIngredientThree,ingredientThree);
 }
 
 /*****afficher la quantité de pates produites******/
 function loadPastaOnScreen() {
     divProducePasta.innerHTML ='Quantité de pates : ' + pasta + ' ' + poids;
     
+    
 destockage();
 }
 
 
 /******afficher les stocks***************/
-function loadStockOnScreen() {
-    var divFarine= document.getElementById('farine');
-    var divOeuf = document.getElementById('oeuf');
-    var divEau = document.getElementById('eau');
-    divFarine.innerHTML='Farine : ' + valueFarine + poids + '.';
-    divOeuf.innerHTML='Oeufs : ' + valueOeuf + ' unités.';
-    divEau.innerHTML = 'Eau : ' + valueEau + ' unités.';
+function loadInformationsOnScreen(divIngredientOne, valueIngredientOne, ingredientOne, 
+                                divIngredientTwo, valueIngredientTwo,ingredientTwo, 
+                                divIngredientThree, valueIngredientThree,ingredientThree) {
+    /**************************stock****************/
+    divIngredientOne.innerHTML= ingredientOne + ' : ' + valueIngredientOne + poids;
+    divIngredientTwo.innerHTML= ingredientTwo + ' : ' + valueIngredientTwo + unite;
+    divIngredientThree.innerHTML = ingredientThree + ' : ' + valueIngredientThree + unite;
+    /*************************date**********************/
+    divDate.innerHTML= jour + '<br/>' + mois[0] + ' ' + annee ;
 
 }
 
-loadStockOnScreen()
+
+function update() {
+    loadInformationsOnScreen() 
+    noTimeToLoose();
+}
+
+update();
