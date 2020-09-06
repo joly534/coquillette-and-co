@@ -9,8 +9,8 @@ function updateMoney() {
 
 
 
-function salePasta() {
-    valuePasta -= 1;
+function saleTagliatelles() {
+    valueTagliatelle -= 1;
     money += 4 ;
     updateMoney();
     loadProductionOnScreen();

@@ -38,6 +38,6 @@ function noTimeToLoose () {
             annee += 1;
         }
    
-    }, 100);
+    }, 20000);
 
 }

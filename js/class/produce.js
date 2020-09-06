@@ -7,36 +7,25 @@ function Produce (pourcentage, avancement, prod, valueOne, valueTwo, valueThree,
     /**production à interval régulier**/
     setInterval(() => {
 
+        var Prod = 0;
+
+        /**la barre de progression se dessine au fur et à mesure que le % augmente*/
         pourcentage += 1;
         var unitPercent = '%';
-
-        /**on dessine la barre de progression */
         avancement.innerHTML = pourcentage + unitPercent;
         avancement.style.width = pourcentage + unitPercent;
 
-        /**réinitialisation de la bartre de progression */
+        /**réinitialisation de la barre de progression lorsque le pourcentage arrive à 100*/
         if (pourcentage == 100) {
 
             /**mise à jour des valeurs */
-            prod += 30;
+            prod += 1;
             ingredientOne -= valueIngredientOne;
             ingredientTwo -= valueIngredientTwo;
             ingredientThree -= valueIngredientThree;
             /**paye des ouvriers */
             money -= valueSalaire;
-            valuePasta += 30;
             pourcentage = 0;
-
-            /**appel à la fonction pour afficher les infos du stock */
-            loadInformationsOnScreen(divIngredientOne, valueIngredientOne, ingredientOne, 
-                                    divIngredientTwo, valueIngredientTwo, ingredientTwo, 
-                                    divIngredientThree, valueIngredientThree, ingredientThree);
-
-            /**appel à la fonction pour afficher les infos de production */
-            loadProductionOnScreen()
-
-            /**Mise à jour de l'argent que le joueur possede */
-            updateMoney();
         } 
 
     }, 25);

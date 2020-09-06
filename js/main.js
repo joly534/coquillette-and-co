@@ -1,6 +1,6 @@
 var value = 0;
-var valuePasta = 0;
-var pasta = 'Pates';
+var valueTagliatelle = 0;
+var tagliatelle = 'Tagliatelles';
 var poids = 'kg';
 var divFarine= document.getElementById('farine');
 var divOeuf = document.getElementById('oeuf');
@@ -22,10 +22,13 @@ function produceTagliatelle()
     var divIngredientThree = document.getElementById('eau');
     var valueIngredientThree = 100;
     var ingredientThree = ingredient[2];
-    prodTagliatelle= new Produce (0, avancement, 30,30, 600, 6, 1, 5, 
+    var divPasta = document.getElementById('pasta')
+    var produceTagliatelle= new Produce (0, avancement, 1, 600, 6, 1, 5, 
                                     divIngredientOne, valueIngredientOne, ingredientOne,
                                     divIngredientTwo,valueIngredientTwo,ingredientTwo,
                                     divIngredientThree,valueIngredientThree,ingredientThree);
+    
+    loadPastaOnScreen = new LoadProductionOnScreen(divPasta,tagliatelle,valueTagliatelle);
 }
 
 
@@ -41,24 +44,11 @@ function loadInformationsOnScreen(divIngredientOne,valueIngredientOne,ingredient
 
 
 
-function destockage() {
-    if (valuePasta >= 1) {
-        divPasta.innerHTML= pasta + ' ' + valuePasta + ' ' + poids + ' ' + '<button onclick ="salePasta()">Vendre<br/>4 frs/kg</button>';
-    }
-}
 
-
-function loadProductionOnScreen() {
-    /********** affiche les infos de production **********/
-    divPasta.innerHTML = pasta + ' : ' + valuePasta + poids + ' .';
-    destockage();
-
-}
 
 
 function update() {
     noTimeToLoose();
-    loadProductionOnScreen();
 }
 
 update();
