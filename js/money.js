@@ -9,16 +9,9 @@ function updateMoney() {
 
 
 
-function destockage() {
-    if (pasta >= 1) {
-        divProducePasta.innerHTML='Quantité de pates : ' + pasta + ' ' + poids + ' ' + '<button onclick ="salePasta()">Vendre<br/>4 frs/kg</button>';
-    }
-}
-
-
 function salePasta() {
-    pasta -= 1;
+    valuePasta -= 1;
     money += 4 ;
     updateMoney();
-    loadPastaOnScreen();
+    loadProductionOnScreen();
 }
