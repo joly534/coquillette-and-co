@@ -1,23 +1,37 @@
-
+/**1er jour du mois */
 var jour = 1;
+
+/**premier index du calendrier */
 var i = 0;
 
+/**les mois dans une année */
 var mois = ['JAN','FEV','MARS','AVR','MAI','JUIN','JUIL','AOUT','SEPT','OCT','NOV','DEC'];
 
+/**année de départ */
 var annee = 1900;
 
+/**ne perdons pas de temps, comptons-le !!!  */
 function noTimeToLoose () {
+
+    /**div contenant la date */
     var divDate = document.getElementById('date');
+
     /**afiche la date à l'écran */
     divDate.innerHTML= jour + '<br/>' + mois[i] + ' ' + annee ;
-    console.log(i)
 
-    /***à interval régulier */
-    
+    /***les jours passent à interval régulier : 20 secondes */    
     setInterval(() => {
-        /**les jours passent */
+        /**une journée passe */
         jour += 1;
-        /** met à jours la date à l'ecran */
+        /**s'il y a des travailleurs */
+        if (travailleur != 0) {
+            /**on les paye */
+            jourDePaye();
+        }
+
+        /**jour de paye */
+
+        /** met à jour la date à l'ecran */
         divDate.innerHTML= jour + '<br/>' + mois[i] + ' ' + annee ;
         /**vérifie si c'est le mois de Février */
         if ((jour == 29) && (i==1)) {
