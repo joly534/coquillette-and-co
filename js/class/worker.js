@@ -1,41 +1,30 @@
-
-
-
-var valueOfStock = 0;
-
 /**************************************************************constructeur de production**************************************************************/
-function Worker (ingredientOne, ingredientTwo, ingredientThree,                /**les ingrédients */
-                valueIngredientOne, valueIngredientTwo, valueIngredientThree,   /**leur valeurs */
-                divIngredientOne, divIngredientTwo, divIngredientThree,         /**les div container */
-                progress, valueProduction, valueSalaire,             /**div de barre de production, prod à chaque tour, le salaire */
-                divofProduction, nameOfProduction, valueOfStock,pourcentage,unitPercent)                /**div de la prod, le nom et la valeur */
+function Worker (ingredientOne, ingredientTwo, ingredientThree,                         /**les ingrédients */
+                valueIngredientOne, valueIngredientTwo, valueIngredientThree,           /**leur valeurs */
+                valueOfProduction, valueSalaire,pourcentage,progress,uniteProgress,
+                nameOfProduction,uniteOfProduction,valueOfProduction)       /**prod à chaque tour, le salaire */
 {                
-
-
-
     /**le travailleur produit à interval régulier**/
     setInterval(() => {
-
 
         /**la barre de progression se dessine au fur et à mesure que le % augmente*/
         pourcentage += 1;
 
         /**le chiffre change en fonction du pourcentage */
-        progress.innerHTML = pourcentage + unitPercent;
+        progress.innerHTML = pourcentage + unite;
 
         /**on fait grossir la barre de progression en fonction du chiffre */
-        progress.style.width = pourcentage + unitPercent;
+        progress.style.width = pourcentage + unite;
 
 
         /**quand la barre arrive à 100 % */
         if (pourcentage == 100) {
             pourcentage +=1
-            valueOfStock += valueProduction;
+            valueOfStock += valueOfProduction;
             /**on affiche la production à l'écran */
-            loadProductionOnScreen(divofProduction,nameOfProduction,valueOfStock)
+            loadProductionOnScreen(nameOfProduction,uniteOfProduction,valueOfStock);
             /**on affiche le stock à l'écran */
-            loadStockOnScreen(ingredientOne,ingredientTwo,ingredientThree,valueIngredientOne,valueIngredientTwo,valueIngredientThree,divIngredientOne,
-                                divIngredientTwo,divIngredientThree)
+            loadStockOnScreen(ingredientOne,ingredientTwo,ingredientThree,valueIngredientOne,valueIngredientTwo,valueIngredientThree)
             /**mise à jour des valeurs */
             ingredientOne -= valueIngredientOne;
             ingredientTwo -= valueIngredientTwo;

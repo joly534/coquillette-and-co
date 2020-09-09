@@ -1,8 +1,13 @@
 
 
 /**on affiche le stock à l'écran */
-function LoadProductionOnScreen(divName,name,valueName) {
-    this.divName = divName,
+function LoadProductionOnScreen(nameOfProduction,uniteOfProduction,valueOfProduction) {
+    var divcontainer = document.getElementById('production');
+    var prod = document.createElement('div');
+    prod.textContent = nameOfProduction + valueOfProduction +uniteOfProduction;
+    divcontainer.append(prod);
+
+
     this.name = name,
     this.valueName = valueName;
     /********** affiche les infos de production **********/

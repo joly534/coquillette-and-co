@@ -1,16 +1,12 @@
 
 var level = 1;
 
-var value = 0;
-var valueTagliatelle = 0;
-var poids = 'kg';
-var ingredient = ['farine', 'Oeuf', 'Eau'];
-var unite = ' unités';
-var travailleur = 0;
+var employes = [];
+/**idOfDivContainer,idOfDivProducer,imageSource,nameOfProduction,ingredientOne,ingredientTwo,ingredientThree,
+   valueIngredientOne, valueIngredientTwo, valueIngredientThree,valueProduction, valueSalaire*/
 
-
-var buttonTagliatelle= new ButtonProducer ('pasta','tagliatelles','tagliatelle','assets/pates/tagliatelle.png','TAGLIATELLES',
-ingredient[0], ingredient[1], ingredient[2], 100, 500, 100, 1, 5);
+var buttonTagliatelle= new ButtonProducer ('pasta','tagliatelles','assets/pates/tagliatelle.png','TAGLIATELLES',ingredient[0], ingredient[1], ingredient[2],
+    100, 500, 100, 1, 5,unite[4]);
 
 if (level = 1)
  {

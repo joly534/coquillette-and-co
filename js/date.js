@@ -24,7 +24,7 @@ function noTimeToLoose () {
         /**une journée passe */
         jour += 1;
         /**s'il y a des travailleurs */
-        if (travailleur != 0) {
+        if (employes.lenght != 0) {
             /**on les paye */
             jourDePaye();
         }
