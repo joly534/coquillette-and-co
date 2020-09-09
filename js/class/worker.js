@@ -4,16 +4,14 @@
 var valueOfStock = 0;
 
 /**************************************************************constructeur de production**************************************************************/
-function Produce (ingredientOne, ingredientTwo, ingredientThree,                /**les ingrédients */
+function Worker (ingredientOne, ingredientTwo, ingredientThree,                /**les ingrédients */
                 valueIngredientOne, valueIngredientTwo, valueIngredientThree,   /**leur valeurs */
                 divIngredientOne, divIngredientTwo, divIngredientThree,         /**les div container */
-                divbarreprogression, valueProduction, valueSalaire,             /**div de barre de production, prod à chaque tour, le salaire */
-                divofProduction, nameOfProduction, valueOfStock)                /**div de la prod, le nom et la valeur */
+                progress, valueProduction, valueSalaire,             /**div de barre de production, prod à chaque tour, le salaire */
+                divofProduction, nameOfProduction, valueOfStock,pourcentage,unitPercent)                /**div de la prod, le nom et la valeur */
 {                
 
-    /**pourcentage de démarrage */
-    var pourcentage = 0;
-    var unitPercent = '%';
+
 
     /**le travailleur produit à interval régulier**/
     setInterval(() => {
@@ -23,10 +21,10 @@ function Produce (ingredientOne, ingredientTwo, ingredientThree,                
         pourcentage += 1;
 
         /**le chiffre change en fonction du pourcentage */
-        divbarreprogression.innerHTML = pourcentage + unitPercent;
+        progress.innerHTML = pourcentage + unitPercent;
 
         /**on fait grossir la barre de progression en fonction du chiffre */
-        divbarreprogression.style.width = pourcentage + unitPercent;
+        progress.style.width = pourcentage + unitPercent;
 
 
         /**quand la barre arrive à 100 % */

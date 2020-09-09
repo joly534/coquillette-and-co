@@ -8,6 +8,9 @@ function ButtonProducer(idOfDivContainer,idOfDivProducer,titleId,imageSource,nam
 
     /**drawing the div for activating production */
     this.draw = function() {
+
+        /**some variables */
+
         
         /**store div parent of the created div in a variable */
         var divContainer = document.getElementById(idOfDivContainer);   
@@ -32,9 +35,13 @@ function ButtonProducer(idOfDivContainer,idOfDivProducer,titleId,imageSource,nam
         progress.className='avancement';
         button.className='production shadow5';
 
+        /**pourcentage de démarrage */
+        var pourcentage = 0;
+        var unitPercent = ' %';
+
         /**put some text */
         title.textContent = nameOfProduction;
-        progress.textContent = ' 0 %';
+        progress.textContent = pourcentage + unitPercent;
         button.textContent = 'Embaucher';
         
 
@@ -50,7 +57,10 @@ function ButtonProducer(idOfDivContainer,idOfDivProducer,titleId,imageSource,nam
 
         /**add a function to the button */
         button.addEventListener('click', function() {
-            var worker = new Worker();
+            var worker = new Worker(ingredientOne,ingredientTwo,ingredientThree,
+                valueIngredientOne,valueIngredientTwo,valueIngredientThree,
+                divIngredientOne,divIngredientTwo,divIngredientThree,progress,valueProduction,
+                valueSalaire,divofProduction,nameOfProduction,valueOfStock,pourcentage,unitPercent);
         });
     }
 }

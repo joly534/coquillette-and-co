@@ -15,7 +15,7 @@
 .board
 {
     background: #f4d58d;
-    width: 50vw;
+    width: 50%;
     max-width: 80%;
     height: 90vh;
     margin: auto;
@@ -194,8 +194,8 @@ button:hover
     color: white;
 }
 /***********MEDIA QUERRIES************/
-@media screen and (max-width: 720px) {
-    .board{ width: 90vw; }
+@media screen and (max-width: 1024px) {
+    .board{ width: 90%; }
     h1{ font-size: 1.5rem; }
     h2{ font-size: 1.2rem; }
     h3{ font-size: 1rem; }
