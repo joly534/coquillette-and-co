@@ -1,7 +1,3 @@
-/**fonction pour embaucher du personnel */
-function recrute(){
-    travailleur += 1;
-}
 
 
 
@@ -18,8 +14,6 @@ function Produce (ingredientOne, ingredientTwo, ingredientThree,                
     /**pourcentage de démarrage */
     var pourcentage = 0;
     var unitPercent = '%';
-    /**on recrute */
-    recrute();
 
     /**le travailleur produit à interval régulier**/
     setInterval(() => {
