@@ -1,9 +1,9 @@
 /**************************************************************constructeur de production**************************************************************/
 function Worker (ingredientOne, ingredientTwo, ingredientThree,                         /**les ingrédients */
                 valueIngredientOne, valueIngredientTwo, valueIngredientThree,           /**leur valeurs */
-                valueOfProduction, valueSalaire,pourcentage,progress,uniteProgress,
-                nameOfProduction,unite,valueOfStock,divProduction,valueNumberOfWorker,
-                divStockOne,divStockTwo,divStockThree)       /**prod à chaque tour, le salaire */
+                valueOfProduction,pourcentage,progress,uniteProgress,
+                nameOfProduction,unite,valueOfStock,valueNumberOfWorker,
+                divProduction,divStockOne,divStockTwo,divStockThree)       /**prod à chaque tour, le salaire */
 {          
 
     /**le travailleur produit à interval régulier**/
@@ -24,10 +24,7 @@ function Worker (ingredientOne, ingredientTwo, ingredientThree,                 
             ingredientThree -= valueIngredientThree;
            
             /**on affiche les informations à l'écran */
-            loadInformationsScreen(nameToProduction,unite,valueOfStock,divProduction,
-                                    divStockOne,divStockTwo,divStockThree,
-                                ingredientOne,ingredientTwo,ingredientThree,
-                                valueIngredientOne,valueIngredientTwo,valueIngredientThree);
+            loadInformationsOnScreen(nameOfProduction,unite,valueOfStock,ingredientOne,ingredientTwo,ingredientThree,valueIngredientOne,valueIngredientTwo,valueIngredientThree,divProduction,divStockOne,divStockTwo,divStockThree);
         }
 
     }, 50);

@@ -10,7 +10,7 @@ function updateMoney() {
 
 /**payons les employés... */
 function jourDePaye() {
-    money -= travailleur * 5
+    money -= valueNumberOfWorker * 5
     /**mettons à jour l'affichage de l'argent restant */
     updateMoney();
 }

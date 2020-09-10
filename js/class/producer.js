@@ -9,15 +9,9 @@ function ButtonProducer(idOfDivContainer,idOfDivProducer,imageSource,nameOfProdu
 
         
         /**store div parent of the created div in a variable */
-        var divContainer = document.getElementById(idOfDivContainer); 
-        var divContainerProduction = document.getElementById('production');  
-        var divContainerStock = document.getElementById('stock')
+        var divContainer = document.getElementById(idOfDivContainer);
 
         /**creating a div and store it in a variable*/
-        var divProduction = document.createElement('div');
-        var divStockOne = document.createElement('div');
-        var divStockTwo = document.createElement('div');
-        var divStockThree = document.createElement('div');
         var divProducer = document.createElement('div');
         var img = document.createElement('img');
         var infos = document.createElement('div');
@@ -27,12 +21,13 @@ function ButtonProducer(idOfDivContainer,idOfDivProducer,imageSource,nameOfProdu
         var bar = document.createElement('div');
         var progress = document.createElement('div');
         var button = document.createElement('button');
+        /**creating a div and store it in a variable*/
+        var divProduction = document.createElement('div');
+        var divStockOne = document.createElement('div');
+        var divStockTwo = document.createElement('div');
+        var divStockThree = document.createElement('div');
 
         /**joining parent and child */
-        divContainerProduction.append(divProduction);
-        divContainerStock.append(divStockOne);
-        divContainerStock.append(divStockTwo);
-        divContainerStock.append(divStockThree);
         divContainer.append(divProducer);
         divProducer.append(img,infos);
         infos.append(title,salePrice,numberOfWorker,bar);
@@ -71,9 +66,8 @@ function ButtonProducer(idOfDivContainer,idOfDivProducer,imageSource,nameOfProdu
             numberOfWorker.textContent = 'Nombre de travailleurs : ' + valueNumberOfWorker ;
             var worker = new Worker(ingredientOne,ingredientTwo,ingredientThree,
                 valueIngredientOne,valueIngredientTwo,valueIngredientThree,
-                valueOfProduction,valueSalaire,pourcentage,progress,unite[4],
-                nameOfProduction,unite[2],valueOfStock,divProduction,valueNumberOfWorker,
-                divStockOne,divStockTwo,divStockThree);
+                valueOfProduction,pourcentage,progress,unite[4],
+                nameOfProduction,unite[2],valueOfStock,valueNumberOfWorker,divProduction,divStockOne,divStockTwo,divStockThree);
         });
     }
 }
