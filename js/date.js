@@ -52,6 +52,6 @@ function noTimeToLoose () {
             annee += 1;
         }
    
-    }, 20000);
+    }, 2);
 
 }

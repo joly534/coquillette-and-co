@@ -1,6 +1,4 @@
-var divMoney=document.getElementById('argent');
-var money = 100;
-var devise = 'francs';
+
 
 divMoney.innerHTML='ARGENT <br/>' + money + ' ' + devise; 
 
