@@ -6,19 +6,6 @@ function loadInformationsOnScreen(nameOfProduction,unite,valueOfStock,
 
     
                                      
-    var divContainerProduction = document.getElementById('production');  
-    var divContainerStock = document.getElementById('stock')
-    /**au niveau de la production */
-    divProduction.innerHTML = '';
-    divProduction.innerHTML = nameOfProduction + ' : ' + valueOfStock + ' ' + unite + ' . ';
-    /**au niveau du stock */
-    divStockOne.innerHTML = ingredientOne + ' : ' + valueStockIngredientOne;
-    divStockTwo.innerHTML = ingredientTwo + ' : ' + valueStockIngredientTwo; 
-    divStockThree.innerHTML = ingredientThree + ' : ' + valueStockIngredientThree;  
-
-    divContainerProduction.append(divProduction);
-    divContainerStock.append(divStockOne);
-    divContainerStock.append(divStockTwo);
-    divContainerStock.append(divStockThree);
+    
 }
 

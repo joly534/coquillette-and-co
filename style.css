@@ -104,6 +104,28 @@ h1 { margin: 0.5em auto; text-align: center;}
     left: 0;
     width: 10em;
 }
+.container-button
+{
+    display: flex!important;
+    flex-direction: column;
+    align-content: center !important;
+    align-items: center;
+    border: solid 1px red;
+    height: 100px;
+    width: 100px;
+    position: relative;
+    ;
+}
+.hidden{
+    display: none;
+    position: relative;
+}
+.visible{
+    display: block;
+    position: relative;
+    height: 25px;
+    margin: 5px 0;
+}
 /************MENU************/
 .icone{
     padding: 20px;

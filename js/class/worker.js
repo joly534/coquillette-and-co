@@ -3,44 +3,33 @@
 
 /**************************************************************constructeur de production**************************************************************/
 function Worker (
-                nameOfProduction,unite,valueOfStock,
-                ingredientOne,ingredientTwo,ingredientThree,
-                valueStockIngredientOne,valueStockIngredientTwo,valueStockIngredientThree,
-                divProduction,divStockOne,divStockTwo,divStockThree,
-                valueIngredientOne,valueIngredientTwo,valueIngredientThree,
-                valueNumberOfWorker,valueOfProduction,pourcentage,progress,uniteProgress
+                valueOfStock,valueStockIngredientOne,valueStockIngredientTwo,valueStockIngredientThree,
+                valueIngredientOne,valueIngredientTwo,valueIngredientThree,valueNumberOfWorker,valueOfProduction,
+                divProduction,nameOfProduction,unite,divStockOne,divStockTwo,divStockThree,
+                ingredientOne,ingredientTwo,ingredientThree
                 )      
 {          
     this.produce = function () {
-        
+        valueOfStock += (valueOfProduction * valueNumberOfWorker);
+                    valueStockIngredientOne -= valueIngredientOne;
+                    valueStockIngredientTwo -= valueIngredientTwo;
+                    valueStockIngredientThree -= valueIngredientThree;
     }
-    /**le travailleur produit à interval régulier**/
-    setInterval(() => {
+    this.loadInformationsOnScreen = function(){
+        var divContainerProduction = document.getElementById('production');  
+        var divContainerStock = document.getElementById('stock')
+        /**au niveau de la production */
+        divProduction.innerHTML = '';
+        divProduction.innerHTML = nameOfProduction + ' : ' + valueOfStock + ' ' + unite + ' . ';
+        /**au niveau du stock */
+        divStockOne.innerHTML = ingredientOne + ' : ' + valueStockIngredientOne;
+        divStockTwo.innerHTML = ingredientTwo + ' : ' + valueStockIngredientTwo; 
+        divStockThree.innerHTML = ingredientThree + ' : ' + valueStockIngredientThree;  
 
-        /**barre de progression */
-        pourcentage += 1;
-        progress.innerHTML = pourcentage + uniteProgress;
-        progress.style.width = pourcentage + uniteProgress;
-
-
-        /**quand la barre arrive à 100 % */
-        if (pourcentage === 100) {
-            pourcentage = 0;
-            valueOfStock += (valueOfProduction * valueNumberOfWorker);
-            valueStockIngredientOne -= valueIngredientOne;
-            valueStockIngredientTwo -= valueIngredientTwo;
-            valueStockIngredientThree -= valueIngredientThree;
-           
-            /**on affiche les informations à l'écran */
-            loadInformationsOnScreen(
-                                    nameOfProduction,unite,valueOfStock,
-                                    ingredientOne,ingredientTwo,ingredientThree,
-                                    valueStockIngredientOne,valueStockIngredientTwo,valueStockIngredientThree,
-                                    divProduction,divStockOne,divStockTwo,divStockThree,
-                                    valueIngredientOne,valueIngredientTwo,valueIngredientThree
-                                    );
-        }
-
-    }, 50);
+        divContainerProduction.append(divProduction);
+        divContainerStock.append(divStockOne);
+        divContainerStock.append(divStockTwo);
+        divContainerStock.append(divStockThree);
+    }
         
 }

@@ -12,12 +12,12 @@ function update() {
     if (level = 1)
      {
         var buttonTagliatelle= new ButtonProducer (
-                                                   'Tagliatelles',unite[2],1,
+                                                   'Tagliatelles',unite[2],
                                                    ingredient[0],ingredient[1],ingredient[2],
                                                    60,600,100,
                                                    0.6,6,1,
                                                    valueNumberOfWorker,1,pourcentage,unite[4],
-                                                   'pasta','tagliatelle','assets/pates/tagliatelle.png',1,5,4,50
+                                                   'pasta','tagliatelle','assets/pates/tagliatelle.png',4,50
                                                    );
         buttonTagliatelle.draw();
      }
