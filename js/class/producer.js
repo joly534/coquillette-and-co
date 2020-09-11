@@ -1,8 +1,14 @@
 
 
 /**contructeur de bouton producer */
-function ButtonProducer(idOfDivContainer,idOfDivProducer,imageSource,nameOfProduction,ingredientOne,ingredientTwo,ingredientThree,
-                        valueIngredientOne, valueIngredientTwo, valueIngredientThree,valueOfProduction, valueSalaire,valuePrice) {
+function ButtonProducer(
+                        nameOfProduction,unite,valueOfStock,
+                        ingredientOne,ingredientTwo,ingredientThree,
+                        valueStockIngredientOne,valueStockIngredientTwo,valueStockIngredientThree,
+                        valueIngredientOne,valueIngredientTwo,valueIngredientThree,
+                        valueNumberOfWorker,valueOfProduction,pourcentage,uniteProgress,
+                        idOfDivContainer,idOfDivProducer,imageSource,valueOfProduction,valueSalaire,valuePrice,uniteSale
+                        ) {
 
     /**drawing the div for activating production */
     this.draw = function() {
@@ -46,9 +52,9 @@ function ButtonProducer(idOfDivContainer,idOfDivProducer,imageSource,nameOfProdu
 
         /**put some text */
         title.textContent = nameOfProduction;
-        salePrice.textContent = 'Vente : ' + valuePrice + ' Francs/' + unite[2];
+        salePrice.textContent = 'Vente : ' + valuePrice + ' Francs/Kg' + unite[2];
         numberOfWorker.textContent = 'Nombre de travailleurs : ' + valueNumberOfWorker ;
-        progress.textContent = pourcentage + unite[4];
+        progress.textContent = pourcentage + uniteProgress;
         button.textContent = 'Embaucher';
         
         
@@ -61,13 +67,14 @@ function ButtonProducer(idOfDivContainer,idOfDivProducer,imageSource,nameOfProdu
 
             /**add a worker */
             valueNumberOfWorker += 1;
-            console.log(valueNumberOfWorker)
             /**show how many workers */
             numberOfWorker.textContent = 'Nombre de travailleurs : ' + valueNumberOfWorker ;
-            var worker = new Worker(ingredientOne,ingredientTwo,ingredientThree,
+            var worker = new Worker(nameOfProduction,unite,valueOfStock,
+                ingredientOne,ingredientTwo,ingredientThree,
+                valueStockIngredientOne,valueStockIngredientTwo,valueStockIngredientThree,
+                divProduction,divStockOne,divStockTwo,divStockThree,
                 valueIngredientOne,valueIngredientTwo,valueIngredientThree,
-                valueOfProduction,pourcentage,progress,unite[4],
-                nameOfProduction,unite[2],valueOfStock,valueNumberOfWorker,divProduction,divStockOne,divStockTwo,divStockThree);
+                valueNumberOfWorker,valueOfProduction,pourcentage,progress,uniteProgress);
         });
     }
 }

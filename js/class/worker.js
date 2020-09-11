@@ -1,11 +1,19 @@
-/**************************************************************constructeur de production**************************************************************/
-function Worker (ingredientOne, ingredientTwo, ingredientThree,                         /**les ingrédients */
-                valueIngredientOne, valueIngredientTwo, valueIngredientThree,           /**leur valeurs */
-                valueOfProduction,pourcentage,progress,uniteProgress,
-                nameOfProduction,unite,valueOfStock,valueNumberOfWorker,
-                divProduction,divStockOne,divStockTwo,divStockThree)       /**prod à chaque tour, le salaire */
-{          
 
+
+
+/**************************************************************constructeur de production**************************************************************/
+function Worker (
+                nameOfProduction,unite,valueOfStock,
+                ingredientOne,ingredientTwo,ingredientThree,
+                valueStockIngredientOne,valueStockIngredientTwo,valueStockIngredientThree,
+                divProduction,divStockOne,divStockTwo,divStockThree,
+                valueIngredientOne,valueIngredientTwo,valueIngredientThree,
+                valueNumberOfWorker,valueOfProduction,pourcentage,progress,uniteProgress
+                )      
+{          
+    this.produce = function () {
+        
+    }
     /**le travailleur produit à interval régulier**/
     setInterval(() => {
 
@@ -19,12 +27,18 @@ function Worker (ingredientOne, ingredientTwo, ingredientThree,                 
         if (pourcentage === 100) {
             pourcentage = 0;
             valueOfStock += (valueOfProduction * valueNumberOfWorker);
-            ingredientOne -= valueIngredientOne;
-            ingredientTwo -= valueIngredientTwo;
-            ingredientThree -= valueIngredientThree;
+            valueStockIngredientOne -= valueIngredientOne;
+            valueStockIngredientTwo -= valueIngredientTwo;
+            valueStockIngredientThree -= valueIngredientThree;
            
             /**on affiche les informations à l'écran */
-            loadInformationsOnScreen(nameOfProduction,unite,valueOfStock,ingredientOne,ingredientTwo,ingredientThree,valueIngredientOne,valueIngredientTwo,valueIngredientThree,divProduction,divStockOne,divStockTwo,divStockThree);
+            loadInformationsOnScreen(
+                                    nameOfProduction,unite,valueOfStock,
+                                    ingredientOne,ingredientTwo,ingredientThree,
+                                    valueStockIngredientOne,valueStockIngredientTwo,valueStockIngredientThree,
+                                    divProduction,divStockOne,divStockTwo,divStockThree,
+                                    valueIngredientOne,valueIngredientTwo,valueIngredientThree
+                                    );
         }
 
     }, 50);

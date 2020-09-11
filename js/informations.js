@@ -1,5 +1,8 @@
 /**fonction pour afficher la production à l'écran */
-function loadInformationsOnScreen(nameOfProduction,unite,valueOfStock,ingredientOne,ingredientTwo,ingredientThree,valueIngredientOne,valueIngredientTwo,valueIngredientThree){
+function loadInformationsOnScreen(nameOfProduction,unite,valueOfStock,
+                                ingredientOne,ingredientTwo,ingredientThree,
+                                valueStockIngredientOne,valueStockIngredientTwo,valueStockIngredientThree,
+                                divProduction,divStockOne,divStockTwo,divStockThree){
 
     
                                      
@@ -9,9 +12,9 @@ function loadInformationsOnScreen(nameOfProduction,unite,valueOfStock,ingredient
     divProduction.innerHTML = '';
     divProduction.innerHTML = nameOfProduction + ' : ' + valueOfStock + ' ' + unite + ' . ';
     /**au niveau du stock */
-    divStockOne.innerHTML = ingredientOne + ' : ' + valueIngredientOne;
-    divStockTwo.innerHTML = ingredientTwo + ' : ' + valueIngredientTwo; 
-    divStockThree.innerHTML = ingredientThree + ' : ' + valueIngredientThree;  
+    divStockOne.innerHTML = ingredientOne + ' : ' + valueStockIngredientOne;
+    divStockTwo.innerHTML = ingredientTwo + ' : ' + valueStockIngredientTwo; 
+    divStockThree.innerHTML = ingredientThree + ' : ' + valueStockIngredientThree;  
 
     divContainerProduction.append(divProduction);
     divContainerStock.append(divStockOne);
