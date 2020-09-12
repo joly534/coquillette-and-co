@@ -11,9 +11,9 @@ function Worker (
 {          
     this.produce = function () {
         valueOfStock += (valueOfProduction * valueNumberOfWorker);
-                    valueStockIngredientOne -= valueIngredientOne;
-                    valueStockIngredientTwo -= valueIngredientTwo;
-                    valueStockIngredientThree -= valueIngredientThree;
+                    valueStockIngredientOne -= (valueIngredientOne * valueNumberOfWorker);
+                    valueStockIngredientTwo -= (valueIngredientTwo * valueNumberOfWorker);
+                    valueStockIngredientThree -= (valueIngredientThree * valueNumberOfWorker);
     }
     this.loadInformationsOnScreen = function(){
         var divContainerProduction = document.getElementById('production');  

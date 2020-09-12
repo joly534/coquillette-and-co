@@ -57,7 +57,7 @@ function ButtonProducer(
         bar.className='barre-production'; 
         progress.className='avancement';
         divContainerButton.className='container-button';
-        button.className='production shadow5';
+        button.className='visible production shadow5';
         buttonXOne.className='hidden';
         buttonXTen.className='hidden';
         buttonXHundred.className='hidden';
@@ -65,8 +65,8 @@ function ButtonProducer(
 
         /**put some text */
         title.textContent = nameOfProduction;
-        salePrice.textContent = 'Vente : ' + valuePrice + ' Francs/Kg' + unite[2];
-        numberOfWorker.textContent = 'Nombre de travailleurs : ' + valueNumberOfWorker ;
+        salePrice.textContent =  valuePrice + ' Francs/Kg';
+        numberOfWorker.textContent = 'Travailleurs : ' + valueNumberOfWorker ;
         progress.textContent = pourcentage + uniteProgress;
         button.textContent = 'Embaucher';
         buttonXOne.textContent = 'X1';
@@ -105,9 +105,9 @@ function ButtonProducer(
 
                 /**quand la barre arrive à 100 % */
                 if (pourcentage === 100) {
-                    /**les travailleurs produisent */
+                    /**le travailleur produit */
                     worker.produce();
-                    /**et ils mettent à jours les infos de stock et prod */
+                    /**et il met à jours les infos de stock et prod */
                     worker.loadInformationsOnScreen()
                     /**puis on réinitialise la valeur de la barre à zéro */
                     pourcentage = 0;
