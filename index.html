@@ -42,53 +42,33 @@
 
             <!--ANIMATION SCREEN-->
             <div class="screen shadow5 bord-ridge-radius">
-
                 <div id="production" class="infos"><h2>PRODUCTION</h2></div>
-                <div id="stock" class="infos"><h2>STOCK</h2></div>
-            
+                <div id="stock" class="infos"><h2>STOCK</h2></div>            
             </div>
-            
+
+            <!--MENU-->
+            <div class="menu">
+                <button onclick="kitchen()" id="button-kitchen" class="production shadow5"><h2>Cuisine</h2></button>
+                <button onclick="shop()" id="button-shop" class="production shadow5"><h2>Magasin</h2></button>
+                <button onclick="factory()" id="button-factory" class="production shadow5"><h2>Usine</h2></button>
+                <button onclick="field()" id="button-field" class="production shadow5"><h2>Champs</h2></button>
+                <button onclick="bourse()" id="button-bourse" class="production shadow5"><h2>Bourse</h2></button>
+            </div>
+
             <!--CONTENT-->
             <div class="content shadow5 bord-ridge-radius">
-
-                <!--MENU-->
-                <div class="menu">
-                    <div class="icone">Cuisine</div>
-                    <div class="icone">Magasin</div>
-                    <div class="icone">Usine</div>
-                    <div class="icone">Franchise</div>
-                    <div class="icone">Bourse</div>
-                </div>
-
                 <!--SECTION PATES-->
-                <div class="control" id="pasta"></div>
-                
+                <div class="control" id="kitchen"></div>               
                 <!--SECTION SHOP-->
-                <div class="control" id="shop">
-
-                </div>     
-
+                <div class="control" id="shop"></div>
                 <!--SECTION FACTORY-->
-                <div class="control" id="factory">
-                    
-                </div>       
-
+                <div class="control" id="factory"></div>
                 <!--SECTION FIELD-->
-                <div class="control" id="field">
-                    
-                </div>
-                
+                <div class="control" id="field"></div>                
                 <!--SECTION FRANCHISE-->
-                <div class="control" id="franchise">
-                    
-                </div>
-
-                <!--SECTION WORLD-->
-                <div class="control" id="world">
-                    
-                </div>
-
+                <div class="control" id="bourse"></div>
             </div>
+
         </div>
     </div>
 

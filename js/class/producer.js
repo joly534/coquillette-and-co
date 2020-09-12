@@ -13,14 +13,14 @@ function ButtonProducer(
     /**au départ le stock est a zéro */
     var valueStockOfProduction = 0;
 
-    /**drawing the div for activating production */
+    /**dessiner la div */
     this.draw = function() {
 
         
-        /**store div parent of the created div in a variable */
+        /**recuperation de la div container pour y injecter le bouton */
         var divContainer = document.getElementById(idOfDivContainer);
 
-        /**creating a div and store it in a variable*/
+        /**création des différents éléments du bouton*/
         var divProducer = document.createElement('div');
         var img = document.createElement('img');
         var infos = document.createElement('div');
@@ -35,23 +35,22 @@ function ButtonProducer(
         var buttonXTen = document.createElement('button');
         var buttonXHundred = document.createElement('button');
         var buttonXMax = document.createElement('button');
-        /**creating a div and store it in a variable*/
         var divProduction = document.createElement('div');
         var divStockOne = document.createElement('div');
         var divStockTwo = document.createElement('div');
         var divStockThree = document.createElement('div');
 
-        /**joining parent and child */
+        /**on injecte les éléments au bon endroit */
         divContainer.append(divProducer);
         divProducer.append(img,infos,divContainerButton);
         infos.append(title,salePrice,numberOfWorker,bar);
         bar.append(progress);
         divContainerButton.append(button,buttonXOne,buttonXTen,buttonXHundred,buttonXMax);
 
-        /**giving an id to these divs */
+        /**certains éléments ont besoins d'un id pour le css */
         divProducer.id = idOfDivProducer;
 
-        /**and a class */
+        /**ou d'une classe */
         divProducer.className = 'section shadow5';
         infos.className = 'infos-production';
         bar.className='barre-production'; 
@@ -63,7 +62,7 @@ function ButtonProducer(
         buttonXHundred.className='hidden';
         buttonXMax.className='hidden';
 
-        /**put some text */
+        /**on rajoute du texte */
         title.textContent = nameOfProduction;
         salePrice.textContent =  valuePrice + ' Francs/Kg';
         numberOfWorker.textContent = 'Travailleurs : ' + valueNumberOfWorker ;
@@ -74,21 +73,23 @@ function ButtonProducer(
         buttonXHundred.textContent = 'X100';
         buttonXMax.textContent = 'MAX';
 
-        /**sourcing the image */
+        /**la source de l'image */
         img.src= imageSource;
         
-        /**show how many workers */
+        /**on affiche le nombre de travailleurs*/
         function showNumberOfWorker(){
             numberOfWorker.textContent = 'Nombre de travailleurs : ' + valueNumberOfWorker ;
         }
 
 
-        /**add a function to the button */
+        /**quand on clique sur le bouton "embaucher" */
         button.addEventListener('click', function() {
 
-            /**add a worker */
+            /**on ajoute un travailleur*/
             valueNumberOfWorker += 1;
+            /**on affiche le nombre de travailleurs*/
             showNumberOfWorker()
+            /**on crée un nouvel objet travailleur*/
             var worker = new Worker(valueStockOfProduction,valueStockIngredientOne,valueStockIngredientTwo,valueStockIngredientThree,
                                     valueIngredientOne,valueIngredientTwo,valueIngredientThree,valueNumberOfWorker,valueOfProduction,
                                     divProduction,nameOfProduction,unite,divStockOne,divStockTwo,divStockThree,
@@ -115,21 +116,18 @@ function ButtonProducer(
             }, interval);
 
 
-            /**on cache le premier bouton de prod pour ne pas modifier la barre de progress */
+            /**on cache le premier bouton de prod pour ne pas perturber la barre de progress */
             button.className='hidden';
             /**et on fait apparaitre les boutons d'embauches multiples */
+            buttonXOne.className ='visible production shadow5';
+            buttonXTen.className ='visible production shadow5';
             buttonXHundred.className ='visible production shadow5';
-
+            buttonXMax.className ='visible production shadow5';
             buttonXHundred.addEventListener('click', function() {
                 valueNumberOfWorker +=100;
                 showNumberOfWorker()
-                for (i=0;i<100;i++) {
-                    var worker = new Worker(valueStockOfProduction,valueStockIngredientOne,valueStockIngredientTwo,valueStockIngredientThree,
-                                            valueIngredientOne,valueIngredientTwo,valueIngredientThree,valueNumberOfWorker,valueOfProduction,
-                                            divProduction,nameOfProduction,unite,divStockOne,divStockTwo,divStockThree,
-                                            ingredientOne,ingredientTwo,ingredientThree);
 
-                }
+                
             })
         });
     }

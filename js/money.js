@@ -21,6 +21,7 @@ function jourDePaye() {
 }
 
 function saleTagliatelles() {
+    var amountSale = 
     valueTagliatelle -= 1;
     money += 4 ;
     updateMoney();

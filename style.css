@@ -73,7 +73,7 @@
 .blue { background: #708d81; }
 .white { background:#f4d58d; }
 .red { background: #bf0603; }
-h1 { margin: 0.5em auto;color: black; text-align: center;position: absolute;z-index: 999;}
+h1 { margin: 0.5em auto;font-size:1.5rem;color:black;text-align:center;position: absolute;z-index: 999;}
 
 /*************INFORMATIONS**************/
 .informations
@@ -110,19 +110,28 @@ h1 { margin: 0.5em auto;color: black; text-align: center;position: absolute;z-in
 }
 .container-button
 {
-    border: solid 1px red;
     position: absolute;
     right: 0;
     width: 100px;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+    
+}
+.section button
+{
+    position: relative !important;
+    margin: 0;
+}
+#shop,#factory,#field,#bourse{
+    display: none;
 }
 .hidden{
     display: none;
-    position: relative;
 }
 .visible{
     display: block;
-    position: relative;
     width: 100%;
     height: 25%;
     margin: 5px 0;
