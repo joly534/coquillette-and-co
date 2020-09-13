@@ -226,7 +226,7 @@ button:hover{box-shadow: none;}
     color: white;
 }
 /***********MEDIA QUERRIES************/
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1280px) {
     .board{ width: 90%; }
     h1{ font-size: 1.5rem; }
     h2{ font-size: 1.2rem; }
