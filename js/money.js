@@ -1,5 +1,5 @@
 
-var money = 100;
+var money = 0;
 var devise = 'francs';
 var divMoney=document.getElementById('argent');
 

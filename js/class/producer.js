@@ -1,15 +1,15 @@
 
 
 /**contructeur de bouton producer */
-function ButtonProducer(
-                        nameOfProduction,unite,
+function ButtonProducer(nameOfProduction,unite,
                         ingredientOne,ingredientTwo,ingredientThree,
                         valueStockIngredientOne,valueStockIngredientTwo,valueStockIngredientThree,
                         valueIngredientOne,valueIngredientTwo,valueIngredientThree,
                         valueNumberOfWorker,valueOfProduction,pourcentage,uniteProgress,
-                        idOfDivContainer,idOfDivProducer,imageSource,valuePrice,interval
-                        ) 
+                        idOfDivContainer,idOfDivProducer,imageSource,valuePrice,interval) 
 {
+
+
     /**au départ le stock est a zéro */
     var valueStockOfProduction = 0;
 
@@ -19,6 +19,7 @@ function ButtonProducer(
         
         /**recuperation de la div container pour y injecter le bouton */
         var divContainer = document.getElementById(idOfDivContainer);
+        var buttonShop = document.getElementById('button-shop');
 
         /**création des différents éléments du bouton*/
         var divProducer = document.createElement('div');
@@ -34,7 +35,6 @@ function ButtonProducer(
         var buttonXOne = document.createElement('button');
         var buttonXTen = document.createElement('button');
         var buttonXHundred = document.createElement('button');
-        var buttonXMax = document.createElement('button');
         var divProduction = document.createElement('div');
         var divStockOne = document.createElement('div');
         var divStockTwo = document.createElement('div');
@@ -45,7 +45,7 @@ function ButtonProducer(
         divProducer.append(img,infos,divContainerButton);
         infos.append(title,salePrice,numberOfWorker,bar);
         bar.append(progress);
-        divContainerButton.append(button,buttonXOne,buttonXTen,buttonXHundred,buttonXMax);
+        divContainerButton.append(button,buttonXOne,buttonXTen,buttonXHundred);
 
         /**certains éléments ont besoins d'un id pour le css */
         divProducer.id = idOfDivProducer;
@@ -60,7 +60,8 @@ function ButtonProducer(
         buttonXOne.className='hidden';
         buttonXTen.className='hidden';
         buttonXHundred.className='hidden';
-        buttonXMax.className='hidden';
+
+        button.style.marginTop = "35%";
 
         /**on rajoute du texte */
         title.textContent = nameOfProduction;
@@ -71,7 +72,6 @@ function ButtonProducer(
         buttonXOne.textContent = 'X1';
         buttonXTen.textContent = 'X10';
         buttonXHundred.textContent = 'X100';
-        buttonXMax.textContent = 'MAX';
 
         /**la source de l'image */
         img.src= imageSource;
@@ -107,14 +107,20 @@ function ButtonProducer(
                 /**quand la barre arrive à 100 % */
                 if (pourcentage === 100) {
                     /**le travailleur produit */
-                    worker.produce();
+                    worker.produce(valueNumberOfWorker);
                     /**et il met à jours les infos de stock et prod */
                     worker.loadInformationsOnScreen()
+                    /**le travailleur gagne en XP */
+                    worker.level += 1
                     /**puis on réinitialise la valeur de la barre à zéro */
                     pourcentage = 0;
                 }
+
             }, interval);
 
+            if (worker.level = 10) {
+                var nextButton = new ButtonProducer;
+            }
 
             /**on cache le premier bouton de prod pour ne pas perturber la barre de progress */
             button.className='hidden';
@@ -122,13 +128,25 @@ function ButtonProducer(
             buttonXOne.className ='visible production shadow5';
             buttonXTen.className ='visible production shadow5';
             buttonXHundred.className ='visible production shadow5';
-            buttonXMax.className ='visible production shadow5';
-            buttonXHundred.addEventListener('click', function() {
-                valueNumberOfWorker +=100;
-                showNumberOfWorker()
-
-                
-            })
         });
+
+        /**click sur le bouton X1 */
+        buttonXOne.addEventListener('click', function() {
+            valueNumberOfWorker += 1;
+            showNumberOfWorker()
+        });
+
+        /**click sur le bouton X10 */
+        buttonXTen.addEventListener('click', function() {
+            valueNumberOfWorker += 10;
+            showNumberOfWorker()
+        });
+
+        /**click sur le bouton X100 */
+        buttonXHundred.addEventListener('click', function() {
+            valueNumberOfWorker +=100;
+            showNumberOfWorker()                
+        });
+
     }
 }

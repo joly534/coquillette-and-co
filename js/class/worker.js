@@ -8,13 +8,16 @@ function Worker (
                 divProduction,nameOfProduction,unite,divStockOne,divStockTwo,divStockThree,
                 ingredientOne,ingredientTwo,ingredientThree
                 )      
-{          
-    this.produce = function () {
+{   
+    this.level = 0;       
+    this.produce = function (valueNumberOfWorker) {
         valueOfStock += (valueOfProduction * valueNumberOfWorker);
-                    valueStockIngredientOne -= (valueIngredientOne * valueNumberOfWorker);
-                    valueStockIngredientTwo -= (valueIngredientTwo * valueNumberOfWorker);
-                    valueStockIngredientThree -= (valueIngredientThree * valueNumberOfWorker);
+        valueStockIngredientOne -= (valueIngredientOne * valueNumberOfWorker);
+        valueStockIngredientTwo -= (valueIngredientTwo * valueNumberOfWorker);
+        valueStockIngredientThree -= (valueIngredientThree * valueNumberOfWorker);
     }
+
+
     this.loadInformationsOnScreen = function(){
         var divContainerProduction = document.getElementById('production');  
         var divContainerStock = document.getElementById('stock')
