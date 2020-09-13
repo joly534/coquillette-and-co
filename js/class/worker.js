@@ -13,6 +13,7 @@ function Worker (
     this.produce = function (valueNumberOfWorker) {
         valueOfStock += (valueOfProduction * valueNumberOfWorker);
         valueStockIngredientOne -= (valueIngredientOne * valueNumberOfWorker);
+        valueStockIngredientOne = valueStockIngredientOne.toFixed(1);
         valueStockIngredientTwo -= (valueIngredientTwo * valueNumberOfWorker);
         valueStockIngredientThree -= (valueIngredientThree * valueNumberOfWorker);
     }
@@ -25,9 +26,9 @@ function Worker (
         divProduction.innerHTML = '';
         divProduction.innerHTML = nameOfProduction + ' : ' + valueOfStock + ' ' + unite + ' . ';
         /**au niveau du stock */
-        divStockOne.innerHTML = ingredientOne + ' : ' + valueStockIngredientOne;
-        divStockTwo.innerHTML = ingredientTwo + ' : ' + valueStockIngredientTwo; 
-        divStockThree.innerHTML = ingredientThree + ' : ' + valueStockIngredientThree;  
+        divStockOne.innerHTML = ingredientOne + valueStockIngredientOne + ' ' + unite;
+        divStockTwo.innerHTML = ingredientTwo + valueStockIngredientTwo; 
+        divStockThree.innerHTML = ingredientThree + valueStockIngredientThree;  
 
         divContainerProduction.append(divProduction);
         divContainerStock.append(divStockOne);

@@ -6,7 +6,7 @@ var containerBourse = document.getElementById('bourse');
 
 
 
-function kitchen() {
+function showKitchen() {
     containerKitchen.style.display='block';
     containerShop.style.display='none';
     containerFactory.style.display='none';
@@ -15,7 +15,7 @@ function kitchen() {
 
 }
 
-function shop()
+function showShop()
 {
     containerKitchen.style.display='none';
     containerShop.style.display='block';
@@ -24,7 +24,7 @@ function shop()
     containerBourse.style.display='none';
 }
 
-function factory()
+function showFactory()
 {
     containerKitchen.style.display='none';
     containerShop.style.display='none';
@@ -33,7 +33,7 @@ function factory()
     containerBourse.style.display='none';
 }
 
-function field()
+function showField()
 {
     containerKitchen.style.display='none';
     containerShop.style.display='none';
@@ -42,7 +42,7 @@ function field()
     containerBourse.style.display='none';
 }
 
-function bourse()
+function showBourse()
 {
     containerKitchen.style.display='none';
     containerShop.style.display='none';

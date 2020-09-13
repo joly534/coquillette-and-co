@@ -85,6 +85,9 @@ function ButtonProducer(nameOfProduction,unite,
         /**quand on clique sur le bouton "embaucher" */
         button.addEventListener('click', function() {
 
+            var audio = new Audio();
+            audio.src = 'assets/sounds/button/boutonok.mp3';
+            audio.play();
             /**on ajoute un travailleur*/
             valueNumberOfWorker += 1;
             /**on affiche le nombre de travailleurs*/
@@ -132,18 +135,27 @@ function ButtonProducer(nameOfProduction,unite,
 
         /**click sur le bouton X1 */
         buttonXOne.addEventListener('click', function() {
+            var audio = new Audio();
+            audio.src = 'assets/sounds/button/boutonok.mp3';
+            audio.play();
             valueNumberOfWorker += 1;
             showNumberOfWorker()
         });
 
         /**click sur le bouton X10 */
         buttonXTen.addEventListener('click', function() {
+            var audio = new Audio();
+            audio.src = 'assets/sounds/button/boutonok.mp3';
+            audio.play();
             valueNumberOfWorker += 10;
             showNumberOfWorker()
         });
 
         /**click sur le bouton X100 */
         buttonXHundred.addEventListener('click', function() {
+            var audio = new Audio();
+            audio.src = 'assets/sounds/button/boutonok.mp3';
+            audio.play();
             valueNumberOfWorker +=100;
             showNumberOfWorker()                
         });

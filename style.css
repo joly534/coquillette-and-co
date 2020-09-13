@@ -100,6 +100,11 @@ h1 { margin: 0.5em auto;font-size:1.5rem;color:black;text-align:center;position:
     width: 50%;
     height: 10em;
 }
+
+#production,#stock{
+    
+    overflow: auto;
+}
 .gif
 {
     width: 100%;
