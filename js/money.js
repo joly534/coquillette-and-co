@@ -12,18 +12,5 @@ function updateMoney() {
     divMoney.innerHTML='ARGENT <br/>' + money + ' ' + devise; 
 }
 
-/**payons les employés... */
-function jourDePaye() {
-    money -= valueNumberOfWorker * 5
-    console.log(valueNumberOfWorker)
-    /**mettons à jour l'affichage de l'argent restant */
-    updateMoney();
-}
 
-function saleTagliatelles() {
-    var amountSale = 
-    valueTagliatelle -= 1;
-    money += 4 ;
-    updateMoney();
-    loadProductionOnScreen();
-}
+

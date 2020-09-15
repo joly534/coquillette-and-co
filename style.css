@@ -131,9 +131,9 @@ h1 { margin: 0.5em auto;font-size:1.5rem;color:black;text-align:center;position:
     margin: 0;
     width: 100%;
 }
-#button-shop,#button-field,#button-factory,#button-bourse{
+/* #button-shop,#button-field,#button-factory,#button-bourse{
     display: none;
-}
+} */
 #shop,#factory,#field,#bourse{
     display: none;
 }

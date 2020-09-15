@@ -1,17 +1,14 @@
 
 
 /**contructeur de bouton producer */
-function ButtonProducer(nameOfProduction,unite,
-                        ingredientOne,ingredientTwo,ingredientThree,
-                        valueStockIngredientOne,valueStockIngredientTwo,valueStockIngredientThree,
-                        valueIngredientOne,valueIngredientTwo,valueIngredientThree,
-                        valueNumberOfWorker,valueOfProduction,pourcentage,uniteProgress,
-                        idOfDivContainer,idOfDivProducer,imageSource,valuePrice,interval) 
+function ButtonOfGame(idOfDivContainer,idOfDivProducer,nameOfProduction,valueNumberOfWorker,imageSource,interval,travail,valueOfProduction,poids) 
 {
-
 
     /**au départ le stock est a zéro */
     var valueStockOfProduction = 0;
+    /**comme la barre de progression */
+    var pourcentage = 0;
+    var uniteProgress = '%';
 
     /**dessiner la div */
     this.draw = function() {
@@ -19,7 +16,6 @@ function ButtonProducer(nameOfProduction,unite,
         
         /**recuperation de la div container pour y injecter le bouton */
         var divContainer = document.getElementById(idOfDivContainer);
-        var buttonShop = document.getElementById('button-shop');
 
         /**création des différents éléments du bouton*/
         var divProducer = document.createElement('div');
@@ -65,7 +61,6 @@ function ButtonProducer(nameOfProduction,unite,
 
         /**on rajoute du texte */
         title.textContent = nameOfProduction;
-        salePrice.textContent =  valuePrice + ' Francs/Kg';
         numberOfWorker.textContent = 'Travailleurs : ' + valueNumberOfWorker ;
         progress.textContent = pourcentage + uniteProgress;
         button.textContent = 'Embaucher';
@@ -84,7 +79,7 @@ function ButtonProducer(nameOfProduction,unite,
 
         /**quand on clique sur le bouton "embaucher" */
         button.addEventListener('click', function() {
-
+            /**bruitage */
             var audio = new Audio();
             audio.src = 'assets/sounds/button/boutonok.mp3';
             audio.play();
@@ -93,10 +88,11 @@ function ButtonProducer(nameOfProduction,unite,
             /**on affiche le nombre de travailleurs*/
             showNumberOfWorker()
             /**on crée un nouvel objet travailleur*/
-            var worker = new Worker(valueStockOfProduction,valueStockIngredientOne,valueStockIngredientTwo,valueStockIngredientThree,
-                                    valueIngredientOne,valueIngredientTwo,valueIngredientThree,valueNumberOfWorker,valueOfProduction,
-                                    divProduction,nameOfProduction,unite,divStockOne,divStockTwo,divStockThree,
-                                    ingredientOne,ingredientTwo,ingredientThree);
+            var worker = new Worker(travail,valueOfProduction,valueStockOfProduction,nameOfProduction,valueStockOfProduction,divProduction,poids);
+                                    // valueStockOfProduction,valueStockIngredientOne,valueStockIngredientTwo,valueStockIngredientThree,
+                                    // valueIngredientOne,valueIngredientTwo,valueIngredientThree,
+                                    // divProduction,nameOfProduction,unite,divStockOne,divStockTwo,divStockThree,
+                                    // ingredientOne,ingredientTwo,ingredientThree);
             
             /**à interval régulier */
             setInterval(() => {
@@ -109,10 +105,19 @@ function ButtonProducer(nameOfProduction,unite,
 
                 /**quand la barre arrive à 100 % */
                 if (pourcentage === 100) {
-                    /**le travailleur produit */
-                    worker.produce(valueNumberOfWorker);
+                    switch (travail) {
+                        case 'produce' :
+                            worker.produce(valueNumberOfWorker);
+                            break;
+                        case 'transform' :
+                            worker.transform(valueNumberOfWorker);
+                            break;
+                        case 'sale' :
+                            worker.sale(valueNumberOfWorker);
+                            break;
+                    }
                     /**et il met à jours les infos de stock et prod */
-                    worker.loadInformationsOnScreen()
+                    worker.loadStockOnScreen()
                     /**le travailleur gagne en XP */
                     worker.level += 1
                     /**puis on réinitialise la valeur de la barre à zéro */
@@ -121,16 +126,6 @@ function ButtonProducer(nameOfProduction,unite,
 
             }, interval);
 
-            if (worker.level = 10) {
-                var nextButton = new ButtonProducer;
-            }
-
-            /**on cache le premier bouton de prod pour ne pas perturber la barre de progress */
-            button.className='hidden';
-            /**et on fait apparaitre les boutons d'embauches multiples */
-            buttonXOne.className ='visible production shadow5';
-            buttonXTen.className ='visible production shadow5';
-            buttonXHundred.className ='visible production shadow5';
         });
 
         /**click sur le bouton X1 */

@@ -25,8 +25,8 @@ function noTimeToLoose () {
         /**une journée passe */
         jour += 1;
 
-        /**jour de paye */
-        jourDePaye();
+        // /**jour de paye */
+        // jourDePaye();
 
         /** met à jour la date à l'ecran */
         divDate.innerHTML= jour + '<br/>' + mois[i] + ' ' + annee ;
