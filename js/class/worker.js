@@ -34,6 +34,11 @@ function Worker (travail,valueOfProduction,valueStockOfProduction,
 
     }
 
+    /**le travailleur ajoute la production au stock */
+    this.loadProductionOnStock = function() {
+        
+    }
+
     /**le travailleur met à jour les infos*/
     this.loadStockOnScreen = function(){
         /**les div contenant les infos */
