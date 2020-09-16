@@ -7,10 +7,10 @@ var containerBourse = document.getElementById('bourse');
 
 
 function showKitchen() {
+    containerField.style.display='none';
     containerKitchen.style.display='block';
     containerShop.style.display='none';
     containerFactory.style.display='none';
-    containerField.style.display='none';
     containerBourse.style.display='none';
 
 }

@@ -43,10 +43,8 @@ function ButtonOfGame(idOfDivContainer,idOfDivProducer,nameOfProduction,valueNum
         bar.append(progress);
         divContainerButton.append(button,buttonXOne,buttonXTen,buttonXHundred);
 
-        /**certains éléments ont besoins d'un id pour le css */
-        divProducer.id = idOfDivProducer;
 
-        /**ou d'une classe */
+        /**certains elements ont besoin d'une classe */
         divProducer.className = 'section shadow5';
         infos.className = 'infos-production';
         bar.className='barre-production'; 
@@ -56,6 +54,8 @@ function ButtonOfGame(idOfDivContainer,idOfDivProducer,nameOfProduction,valueNum
         buttonXOne.className='hidden';
         buttonXTen.className='hidden';
         buttonXHundred.className='hidden';
+
+        divProduction.id='prod';
 
         button.style.marginTop = "35%";
 
@@ -117,9 +117,9 @@ function ButtonOfGame(idOfDivContainer,idOfDivProducer,nameOfProduction,valueNum
                             break;
                     }
                     /**et il met à jours les infos de stock et prod */
-                    worker.loadStockOnScreen()
+                    worker.loadProductionOnStock();
                     /**le travailleur gagne en XP */
-                    worker.level += 1
+                    worker.level += 1;
                     /**puis on réinitialise la valeur de la barre à zéro */
                     pourcentage = 0;
                 }

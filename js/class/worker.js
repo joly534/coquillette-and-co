@@ -29,24 +29,25 @@ function Worker (travail,valueOfProduction,valueStockOfProduction,
     }
 
     /**le travailleur est un vendeur*/
-    this.sale = function() {
+    this.sale = function(valueNumberOfWorker) {
         /**il utilise un produit du stock */
 
     }
 
     /**le travailleur ajoute la production au stock */
-    this.loadProductionOnStock = function() {
+    this.loadProductionOnStock = function(valueNumberOfWorker) {
+        
+        var divContainerStock = document.getElementById('stock');
+        divProduction.innerHTML = '';
+        divProduction.innerHTML = nameOfProduction + ' : ' + valueStockOfProduction + ' ' + poids + ' . ';
+        divContainerStock.prepend(divProduction);
         
     }
 
     /**le travailleur met à jour les infos*/
     this.loadStockOnScreen = function(){
         /**les div contenant les infos */
-        var divContainerStock = document.getElementById('stock');
         /**infos de la production */
-        divProduction.innerHTML = '';
-        divProduction.innerHTML = nameOfProduction + ' : ' + valueStockOfProduction + ' ' + poids + ' . ';
-        divContainerStock.appendChild(divProduction);
     }
         
 }
