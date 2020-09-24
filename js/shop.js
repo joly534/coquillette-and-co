@@ -1,0 +1,1 @@
+var buttonMarche = new ButtonOfGame('shop','marche','Marché',valueNumberOfWorker,)

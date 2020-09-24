@@ -89,11 +89,7 @@ function ButtonOfGame(idOfDivContainer,idOfDivProducer,nameOfProduction,valueNum
             showNumberOfWorker()
             /**on crée un nouvel objet travailleur*/
             var worker = new Worker(travail,valueOfProduction,valueStockOfProduction,nameOfProduction,valueStockOfProduction,divProduction,poids);
-                                    // valueStockOfProduction,valueStockIngredientOne,valueStockIngredientTwo,valueStockIngredientThree,
-                                    // valueIngredientOne,valueIngredientTwo,valueIngredientThree,
-                                    // divProduction,nameOfProduction,unite,divStockOne,divStockTwo,divStockThree,
-                                    // ingredientOne,ingredientTwo,ingredientThree);
-            
+                                                
             /**à interval régulier */
             setInterval(() => {
 
@@ -117,7 +113,7 @@ function ButtonOfGame(idOfDivContainer,idOfDivProducer,nameOfProduction,valueNum
                             break;
                     }
                     /**et il met à jours les infos de stock et prod */
-                    worker.loadProductionOnStock();
+                    worker.loadProductionOnStock(nameInStock);
                     /**le travailleur gagne en XP */
                     worker.level += 1;
                     /**puis on réinitialise la valeur de la barre à zéro */
