@@ -5,23 +5,21 @@
 .shadow5{box-shadow:0px 0px 10px #001427;}
 .radius{border-radius:5px;}
 .bord-ridge-radius{border:3px ridge white;border-radius:5px;}
-.flexrow{display:flex;flex-direction:row;justify-content:space-around;}
-.flexcol{display:flex;flex-direction:column;justify-content:space-around;align-items:center;}
 .center{text-align:center;}
 
 /***********HEADER***********/
-.header{height:4em;margin-bottom:1.5em;display:flex;align-items:center;}
-.header, .flag{display:flex;flex-direction:row;}
+.header{height:4em;margin-bottom:1.5em;display:flex;flex-direction:row;justify-content:space-between;align-items:center;}
+.flag{display:flex;flex-direction:row;}
 .annee, .argent{width:18%;display:flex;flex-direction:column;justify-content:space-around;}
 .titre{width:64%;height:5em;position:relative;}
 
 /********DRAPEAU*********/
-.flag{border:3px ridge white;width:40%;height:100%;position:absolute;}
-.blue, .red, .white{width:33.33%;}
+.flag{border:3px ridge white;width:40%;height:100%;position: absolute;}
+.blue, .red, .white{width:33.33%;position: relative;}
 .blue{background:#708d81;}
 .white{background:#f4d58d;}
 .red{background:#bf0603;}
-h1{margin:0.5em auto;font-size:1.5rem;color:black;text-align:center;position:absolute;z-index:999;}
+h1{margin:0.5em 1em;font-size:1.5rem;color:black;text-align:center;position:absolute;z-index:999;}
 #title-stock{display:flex;flex-direction:column;justify-content:space-around;height:100%;padding:2px 5px;background:white;border-radius:2px;box-shadow: 0px 2px 15px #001427;}
 
 /*************INFORMATIONS**************/
